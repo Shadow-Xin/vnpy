@@ -185,7 +185,7 @@ class TimeCell(BaseCell):
             return
 
         content = content.astimezone(self.local_tz)
-        timestamp: str = content.strftime("%H:%M:%S")
+        timestamp: str = content.strftime("%Y-%m-%d %H:%M:%S")
 
         millisecond: int = int(content.microsecond / 1000)
         if millisecond:
