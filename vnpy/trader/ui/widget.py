@@ -173,7 +173,8 @@ class TimeCell(BaseCell):
     Cell used for showing time string from datetime object.
     """
 
-    local_tz = ZoneInfo(get_localzone_name())
+    # local_tz = ZoneInfo(get_localzone_name())
+    local_tz = ZoneInfo(SETTINGS["database.timezone"])
 
     def __init__(self, content: Any, data: Any) -> None:
         """"""
