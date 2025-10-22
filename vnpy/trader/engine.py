@@ -315,6 +315,7 @@ class LogEngine(BaseEngine):
 
         log: LogData = event.data
         level: str | int = self.level_map.get(log.level, log.level)
+        log.msg = log.msg.replace("{", "{{").replace("}", "}}")
         logger.log(level, log.msg, gateway_name=log.gateway_name)
 
     def register_log(self, event_type: str) -> None:
